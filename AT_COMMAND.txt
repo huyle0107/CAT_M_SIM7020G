@@ -1,0 +1,30 @@
+AT			
+ATZ			
+AT+CPIN?		
+AT+CCID			
+AT+COPS?		
+AT+CEREG?		
+AT+CBAND=3		
+AT+CGATT=?
+AT+CGACT=1
+AT+CGDCONT=1,"IP","cat-m" 
+AT+COPS=0				
+AT+CGREG=0		
+AT+COPS?		
+AT+CSQ			
+
+AT+SMDISC=0
+AT+SMSTATE? 
+AT+SMPUBHEX=1
+
+AT+SMCONF="CLIENTID","SoilAir" 
+AT+SMCONF="KEEPTIME",60 
+AT+SMCONF="URL","mqttserver.tk", "1883"
+AT+SMCONF="USERNAME","innovation"
+AT+SMCONF="PASSWORD","Innovation_RgPQAZoA5N"
+
+AT+SMSUB="/innovation/airmonitoring/WSNs",1
+
+AT+SMCONN 
+AT+SMPUB="/innovation/airmonitoring/WSNs",39,1,1
+"{\"temperature\": 25.5, \"humidity\": 60.2}"
